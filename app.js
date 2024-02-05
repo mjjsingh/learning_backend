@@ -11,12 +11,12 @@ const server = http.createServer((req, res) => {
     res.write('</html>');
     return res.end();
   }
-//   if (url === '/message' && method === 'POST') {
-//     fs.writeFileSync('message.txt', 'DUMMY');
-//     res.statusCode = 302;
-//     res.setHeader('Location', '/');
-//     return res.end();
-//   }
+  if (url === '/message' && method === 'POST') {
+    fs.writeFileSync('message.txt', 'DUMMY');
+    res.statusCode = 302;
+    res.setHeader('Location', '/');
+    return res.end();
+  }
   res.setHeader('Content-Type', 'text/html');
   res.write('<html>');
   res.write('<head><title>My First Page</title><head>');
